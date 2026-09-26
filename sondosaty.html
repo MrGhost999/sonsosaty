@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️ Sondosaty ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle, #3b0018 0%, #12000a 45%, #000 100%);
+    font-family: Georgia, serif;
+    color: white;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: .2;
+        transform: scale(.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* =========================
+   HEART
+========================= */
+
+.heart-container {
+    position: absolute;
+    top: 32%;
+    width: 260px;
+    height: 260px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.heart {
+    width: 145px;
+    height: 145px;
+
+    background: #ff1744;
+
+    transform: rotate(-45deg);
+
+    box-shadow:
+        0 0 15px #ff1744,
+        0 0 40px #ff1744,
+        0 0 80px #ff1744,
+        0 0 130px rgba(255, 0, 70, .5);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    background: #ff1744;
+
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -72px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 72px;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text {
+    position: absolute;
+
+    top: 63%;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 20;
+}
+
+#loveText {
+    font-size: clamp(28px, 5vw, 52px);
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff1744,
+        0 0 30px #ff1744,
+        0 0 50px #ff1744;
+}
+
+#romanticText {
+    margin-top: 15px;
+
+    font-size: clamp(16px, 3vw, 25px);
+
+    color: #ffb6c8;
+
+    font-style: italic;
+
+    text-shadow:
+        0 0 10px #ff1744,
+        0 0 20px #ff1744;
+
+    opacity: 0;
+
+    transition: 2s;
+}
+
+/* =========================
+   KISS 💋
+========================= */
+
+.kiss {
+    position: absolute;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: kissFly 4s linear forwards;
+
+    filter:
+        drop-shadow(0 0 8px #ff1744);
+}
+
+@keyframes kissFly {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(-10deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-450px)
+            translateX(var(--move))
+            scale(1.4)
+            rotate(15deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   SMALL HEARTS
+========================= */
+
+.small-heart {
+    position: absolute;
+
+    color: #ff4d6d;
+
+    font-size: 20px;
+
+    animation: heartFly 5s linear forwards;
+
+    text-shadow:
+        0 0 10px #ff1744,
+        0 0 20px #ff1744;
+}
+
+@keyframes heartFly {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(.4);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-550px)
+            translateX(var(--move))
+            scale(1.3)
+            rotate(30deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   ROSES
+========================= */
+
+.rose {
+    position: absolute;
+
+    font-size: 30px;
+
+    animation: roseFloat 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 8px #ff1744);
+}
+
+@keyframes roseFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* =========================
+   LOVE MESSAGE
+========================= */
+
+.love-message {
+    position: absolute;
+
+    bottom: 7%;
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #ffccd8;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    animation: appear 3s forwards;
+    animation-delay: 5s;
+
+    text-shadow: 0 0 10px #ff1744;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene" id="scene">
+
+    <!-- ❤️ Main Heart -->
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+
+    <!-- 🌹 Roses -->
+    <div class="rose" style="left:12%; top:25%;">🌹</div>
+    <div class="rose" style="right:12%; top:30%; animation-delay:1s;">🌹</div>
+
+    <!-- Text -->
+    <div class="text">
+
+        <div id="loveText"></div>
+
+        <div id="romanticText">
+            ❤️ You are my favorite person in this world ❤️
+        </div>
+
+    </div>
+
+    <div class="love-message">
+        💋 Every heartbeat whispers your name, Sondosaty 💋
+    </div>
+
+</div>
+
+<script>
+
+const scene = document.getElementById("scene");
+
+const loveText =
+    document.getElementById("loveText");
+
+const romanticText =
+    document.getElementById("romanticText");
+
+const message =
+    "I LOVE YOU SONDOSATY";
+
+let index = 0;
+
+
+/* =========================
+   Typing Animation
+========================= */
+
+function typeText() {
+
+    if (index < message.length) {
+
+        loveText.textContent +=
+            message[index];
+
+        index++;
+
+        setTimeout(typeText, 130);
+
+    } else {
+
+        romanticText.style.opacity = "1";
+    }
+}
+
+
+/* =========================
+   Stars
+========================= */
+
+for (let i = 0; i < 100; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    const size =
+        Math.random() * 3 + 1;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    scene.appendChild(star);
+}
+
+
+/* =========================
+   Flying Hearts ❤️
+========================= */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "small-heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.bottom =
+        "-30px";
+
+    heart.style.fontSize =
+        (Math.random() * 22 + 10) + "px";
+
+    heart.style.setProperty(
+        "--move",
+        (Math.random() * 250 - 125) + "px"
+    );
+
+    scene.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 250);
+
+
+/* =========================
+   Flying Kisses 💋
+========================= */
+
+function createKiss() {
+
+    const kiss =
+        document.createElement("div");
+
+    kiss.className = "kiss";
+
+    kiss.innerHTML = "💋";
+
+    kiss.style.left =
+        Math.random() * 100 + "%";
+
+    kiss.style.bottom =
+        "-30px";
+
+    kiss.style.fontSize =
+        (Math.random() * 18 + 18) + "px";
+
+    kiss.style.setProperty(
+        "--move",
+        (Math.random() * 300 - 150) + "px"
+    );
+
+    scene.appendChild(kiss);
+
+    setTimeout(() => {
+        kiss.remove();
+    }, 5000);
+}
+
+setInterval(createKiss, 900);
+
+
+/* =========================
+   START ❤️
+========================= */
+
+setTimeout(typeText, 1000);
+
+</script>
+
+</body>
+</html>
