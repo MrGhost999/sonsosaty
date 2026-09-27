@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>🥺 I'm Sorry Sondosaty</title>
+
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3a0715 0%,
+            #17030a 45%,
+            #050005 100%
+        );
+
+    font-family:
+        Georgia,
+        serif;
+
+    color: white;
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.scene {
+
+    position: relative;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+
+    position: absolute;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 12px white;
+
+    animation:
+        twinkle 2s infinite alternate;
+}
+
+
+@keyframes twinkle {
+
+    0% {
+
+        opacity: .15;
+
+        transform: scale(.5);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: scale(1.6);
+    }
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+
+    position: absolute;
+
+    top: 8%;
+
+    right: 8%;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #fff4f7;
+
+    box-shadow:
+        0 0 15px #fff,
+        0 0 40px #ffb6c8;
+
+    opacity: .9;
+}
+
+
+/* =========================
+   HEART CONTAINER
+========================= */
+
+.heart-container {
+
+    position: absolute;
+
+    top: 25%;
+
+    width: 300px;
+
+    height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+
+/* =========================
+   BROKEN HEART
+========================= */
+
+.heart {
+
+    position: relative;
+
+    width: 140px;
+
+    height: 140px;
+
+    background: #d91e4f;
+
+    transform: rotate(-45deg);
+
+    box-shadow:
+
+        0 0 15px #ff1744,
+
+        0 0 35px #ff1744,
+
+        0 0 70px #ff1744,
+
+        0 0 120px rgba(255, 0, 70, .4);
+}
+
+
+/* Heart circles */
+
+.heart::before,
+.heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+
+    height: 140px;
+
+    background: #d91e4f;
+
+    border-radius: 50%;
+}
+
+
+.heart::before {
+
+    top: -70px;
+
+    left: 0;
+}
+
+
+.heart::after {
+
+    top: 0;
+
+    left: 70px;
+}
+
+
+/* Crack */
+
+.crack {
+
+    position: absolute;
+
+    z-index: 10;
+
+    width: 9px;
+
+    height: 170px;
+
+    background: #18000a;
+
+    transform:
+
+        rotate(8deg)
+
+        translate(-5px, -5px);
+
+    clip-path:
+
+        polygon(
+            45% 0,
+            65% 15%,
+            35% 28%,
+            70% 43%,
+            40% 57%,
+            65% 73%,
+            35% 100%,
+            20% 80%,
+            48% 62%,
+            18% 45%,
+            52% 30%,
+            25% 15%
+        );
+}
+
+
+/* =========================
+   HEARTBEAT
+========================= */
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+    }
+
+    15% {
+
+        transform:
+            scale(1.12);
+    }
+
+    30% {
+
+        transform:
+            scale(1);
+    }
+
+    45% {
+
+        transform:
+            scale(1.08);
+    }
+
+    60% {
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================
+   MAIN TEXT
+========================= */
+
+.text {
+
+    position: absolute;
+
+    top: 62%;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 20;
+}
+
+
+#sorryText {
+
+    font-size:
+        clamp(
+            28px,
+            5vw,
+            52px
+        );
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 5px white,
+
+        0 0 15px #ff1744,
+
+        0 0 30px #ff1744,
+
+        0 0 50px #ff1744;
+}
+
+
+/* =========================
+   SECOND MESSAGE
+========================= */
+
+#secondText {
+
+    margin-top: 18px;
+
+    font-size:
+        clamp(
+            17px,
+            3vw,
+            27px
+        );
+
+    color: #ffb6c8;
+
+    font-style: italic;
+
+    text-shadow:
+
+        0 0 10px #ff1744,
+
+        0 0 25px #ff1744;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+}
+
+
+/* =========================
+   FLYING HEARTS
+========================= */
+
+.small-heart {
+
+    position: absolute;
+
+    color: #ff4d6d;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation:
+        heartFly 5s linear forwards;
+
+    text-shadow:
+
+        0 0 8px #ff1744,
+
+        0 0 20px #ff1744;
+}
+
+
+@keyframes heartFly {
+
+    0% {
+
+        transform:
+
+            translateY(0)
+
+            scale(.3)
+
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+
+            translateY(-600px)
+
+            translateX(var(--move))
+
+            scale(1.3)
+
+            rotate(30deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   TEARS
+========================= */
+
+.tear {
+
+    position: absolute;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    animation:
+        tearFly 4s linear forwards;
+
+    filter:
+        drop-shadow(
+            0 0 8px #4da6ff
+        );
+}
+
+
+@keyframes tearFly {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    20% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-450px)
+            translateX(var(--move))
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   ROSES
+========================= */
+
+.rose {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    animation:
+        roseFloat 3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 8px #ff1744
+        );
+}
+
+
+@keyframes roseFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+    }
+}
+
+
+/* =========================
+   APOLOGY MESSAGE
+========================= */
+
+.apology {
+
+    position: absolute;
+
+    bottom: 8%;
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #ffd6df;
+
+    font-size:
+        clamp(
+            14px,
+            2vw,
+            19px
+        );
+
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    animation:
+        appear 3s forwards;
+
+    animation-delay: 6s;
+
+    text-shadow:
+        0 0 10px #ff1744;
+}
+
+
+@keyframes appear {
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    position: absolute;
+
+    bottom: 2%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        10px 25px;
+
+    border: 1px solid #ff4d6d;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 23, 68, .15);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff1744;
+
+    transition:
+        .3s;
+
+    z-index: 50;
+}
+
+
+button:hover {
+
+    background:
+        #ff1744;
+
+    box-shadow:
+        0 0 30px #ff1744;
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="scene" id="scene">
+
+
+    <!-- 🌙 Moon -->
+
+    <div class="moon"></div>
+
+
+    <!-- ❤️ Broken Heart -->
+
+    <div class="heart-container">
+
+        <div class="heart">
+
+            <div class="crack"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 🌹 Roses -->
+
+    <div
+        class="rose"
+        style="
+            left: 10%;
+            top: 28%;
+        "
+    >
+        🌹
+    </div>
+
+
+    <div
+        class="rose"
+        style="
+            right: 10%;
+            top: 30%;
+            animation-delay: 1s;
+        "
+    >
+        🌹
+    </div>
+
+
+    <!-- TEXT -->
+
+    <div class="text">
+
+        <div id="sorryText"></div>
+
+
+        <div id="secondText">
+
+            🥺 Please forgive me, Sondosaty ❤️
+
+        </div>
+
+    </div>
+
+
+    <!-- APOLOGY -->
+
+    <div class="apology">
+
+        💔 I know I made a mistake...<br>
+
+        I'm truly sorry, Sondosaty.<br>
+
+        I don't want to lose you. ❤️
+
+    </div>
+
+
+    <!-- BUTTON -->
+
+    <button onclick="sendLove()">
+
+        ❤️ Forgive Me
+
+    </button>
+
+
+</div>
+
+
+
+<script>
+
+
+const scene =
+    document.getElementById("scene");
+
+
+const sorryText =
+    document.getElementById("sorryText");
+
+
+const secondText =
+    document.getElementById("secondText");
+
+
+/* =========================
+   MAIN MESSAGE
+========================= */
+
+const message =
+    "I'm Sorry Sondosaty";
+
+
+let index = 0;
+
+
+/* =========================
+   TYPING ANIMATION
+========================= */
+
+function typeText() {
+
+
+    if (
+        index <
+        message.length
+    ) {
+
+
+        sorryText.textContent +=
+            message[index];
+
+
+        index++;
+
+
+        setTimeout(
+            typeText,
+            130
+        );
+
+
+    } else {
+
+
+        setTimeout(
+            () => {
+
+                secondText.style.opacity =
+                    "1";
+
+            },
+            500
+        );
+
+    }
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+for (
+    let i = 0;
+    i < 120;
+    i++
+) {
+
+
+    const star =
+        document.createElement("div");
+
+
+    star.className =
+        "star";
+
+
+    star.style.left =
+        Math.random() * 100 +
+        "%";
+
+
+    star.style.top =
+        Math.random() * 100 +
+        "%";
+
+
+    const size =
+        Math.random() * 3 + 1;
+
+
+    star.style.width =
+        size + "px";
+
+
+    star.style.height =
+        size + "px";
+
+
+    star.style.animationDelay =
+        Math.random() * 2 +
+        "s";
+
+
+    scene.appendChild(star);
+
+}
+
+
+/* =========================
+   FLYING HEARTS
+========================= */
+
+function createHeart() {
+
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className =
+        "small-heart";
+
+
+    heart.innerHTML =
+        "♥";
+
+
+    heart.style.left =
+        Math.random() * 100 +
+        "%";
+
+
+    heart.style.bottom =
+        "-30px";
+
+
+    heart.style.fontSize =
+        (
+            Math.random() * 22 + 10
+        ) + "px";
+
+
+    heart.style.setProperty(
+
+        "--move",
+
+        (
+            Math.random() * 250 -
+            125
+        ) + "px"
+
+    );
+
+
+    scene.appendChild(heart);
+
+
+    setTimeout(
+        () => {
+
+            heart.remove();
+
+        },
+        6000
+    );
+
+}
+
+
+setInterval(
+    createHeart,
+    300
+);
+
+
+/* =========================
+   FLYING TEARS
+========================= */
+
+function createTear() {
+
+
+    const tear =
+        document.createElement("div");
+
+
+    tear.className =
+        "tear";
+
+
+    tear.innerHTML =
+        "💧";
+
+
+    tear.style.left =
+        Math.random() * 100 +
+        "%";
+
+
+    tear.style.bottom =
+        "-30px";
+
+
+    tear.style.fontSize =
+        (
+            Math.random() * 15 + 15
+        ) + "px";
+
+
+    tear.style.setProperty(
+
+        "--move",
+
+        (
+            Math.random() * 200 -
+            100
+        ) + "px"
+
+    );
+
+
+    scene.appendChild(tear);
+
+
+    setTimeout(
+        () => {
+
+            tear.remove();
+
+        },
+        5000
+    );
+
+}
+
+
+setInterval(
+    createTear,
+    1000
+);
+
+
+/* =========================
+   BUTTON
+========================= */
+
+function sendLove() {
+
+
+    alert(
+        "🥺 Thank you, Sondosaty ❤️"
+    );
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+setTimeout(
+    typeText,
+    1000
+);
+
+
+</script>
+
+
+</body>
+
+</html>
