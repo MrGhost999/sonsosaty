@@ -19,7 +19,75 @@ body {
     font-family: Georgia, serif;
     color: white;
 }
+<!-- زر الاعتذار -->
+<a href="sorry_sondosaty.html" class="sorry-button">
+    🥺 عندي حاجة نقولها ليك ❤️
+</a>
 
+<style>
+.sorry-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    color: white;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #ff1744,
+        #b0003a
+    );
+
+    border: 2px solid #ff8fa3;
+    border-radius: 40px;
+
+    box-shadow:
+        0 0 10px #ff1744,
+        0 0 25px #ff1744,
+        0 0 50px rgba(255, 23, 68, 0.5);
+
+    transition: all 0.3s ease;
+
+    z-index: 100;
+}
+
+/* ملي تحط الماوس فوق الزر */
+.sorry-button:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+    background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #ff1744
+    );
+
+    box-shadow:
+        0 0 15px #ff1744,
+        0 0 40px #ff1744,
+        0 0 80px rgba(255, 23, 68, 0.7);
+}
+
+/* ملي تضغط عليه */
+.sorry-button:active {
+
+    transform:
+        translateX(-50%)
+        scale(0.95);
+}
+</style>
 .scene {
     position: relative;
     width: 100vw;
